@@ -1,0 +1,786 @@
+/* ═══════════════════════════════════════════════════════════════
+   CONTAINER & LAYOUT
+   ═══════════════════════════════════════════════════════════════ */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 64px);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PAGE HEADER
+   ═══════════════════════════════════════════════════════════════ */
+
+.pageHeader {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.pageHeader h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #1a2332;
+  margin-bottom: 0.5rem;
+}
+
+.pageHeader h1 span {
+  color: #0088cc;
+}
+
+.pageHeader p {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: #5a6c7d;
+  text-transform: uppercase;
+}
+
+.backButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: 1px solid #d1d9e0;
+  color: #5a6c7d;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  border-color: #0088cc;
+  color: #0088cc;
+  background: rgba(0, 136, 204, 0.05);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONFIG STAGE
+   ═══════════════════════════════════════════════════════════════ */
+
+.configStage {
+  animation: fadeIn 0.3s ease;
+}
+
+.configGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.configSection {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.configSection:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: #a8b8c8;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #d1d9e0;
+}
+
+.sectionIcon {
+  font-size: 1.5rem;
+}
+
+.sectionHeader h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a2332;
+  margin: 0;
+}
+
+.configCard {
+  margin-bottom: 1.25rem;
+}
+
+.configCard:last-child {
+  margin-bottom: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FORM INPUTS
+   ═══════════════════════════════════════════════════════════════ */
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a2332;
+  margin-bottom: 0.5rem;
+}
+
+.labelHint {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #5a6c7d;
+  font-style: italic;
+}
+
+.labelValue {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0088cc;
+  font-family: 'Space Mono', monospace;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #d1d9e0;
+  background: #fafbfc;
+  color: #1a2332;
+  font-size: 0.85rem;
+  font-family: 'Space Mono', monospace;
+  transition: all 0.2s ease;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #0088cc;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.1);
+}
+
+.inputSmall {
+  width: 80px;
+  padding: 0.5rem;
+  border: 1px solid #d1d9e0;
+  background: #fafbfc;
+  color: #1a2332;
+  font-size: 0.8rem;
+  font-family: 'Space Mono', monospace;
+  text-align: center;
+}
+
+.inputSmall:focus {
+  outline: none;
+  border-color: #0088cc;
+  background: #ffffff;
+}
+
+.select {
+  cursor: pointer;
+}
+
+.select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SLIDERS
+   ═══════════════════════════════════════════════════════════════ */
+
+.slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #d1d9e0;
+  outline: none;
+  margin-top: 0.5rem;
+  -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0088cc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #00b894;
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0088cc;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #00b894;
+  transform: scale(1.1);
+}
+
+.sliderLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  color: #5a6c7d;
+  font-family: 'Space Mono', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CHECKBOX
+   ═══════════════════════════════════════════════════════════════ */
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #1a2332;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.checkboxLabel:hover {
+  background: rgba(0, 136, 204, 0.05);
+  border-color: #d1d9e0;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  cursor: pointer;
+  accent-color: #0088cc;
+  width: 18px;
+  height: 18px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RANGE INPUTS
+   ═══════════════════════════════════════════════════════════════ */
+
+.rangeInputs {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.rangeInput {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #5a6c7d;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INFO PANEL
+   ═══════════════════════════════════════════════════════════════ */
+
+.infoPanel {
+  background: #fafbfc;
+  border-left: 4px solid #0088cc;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.infoText {
+  font-size: 0.8rem;
+  color: #1a2332;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.infoText:last-child {
+  margin-bottom: 0;
+}
+
+.methodBox {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.methodBox h4 {
+  font-size: 0.85rem;
+  color: #1a2332;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.formula {
+  background: #fafbfc;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  color: #0088cc;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.formulaNote {
+  font-size: 0.75rem;
+  color: #5a6c7d;
+  text-align: center;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SUBMIT SECTION
+   ═══════════════════════════════════════════════════════════════ */
+
+.submitSection {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  border-top: 1px solid #d1d9e0;
+}
+
+.runButton {
+  background: #0088cc;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+}
+
+.runButton:hover {
+  background: #00b894;
+  box-shadow: 0 6px 20px rgba(0, 184, 148, 0.3);
+  transform: translateY(-2px);
+}
+
+.runButton:active {
+  transform: translateY(0);
+}
+
+.runIcon {
+  font-size: 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LOADING STAGE
+   ═══════════════════════════════════════════════════════════════ */
+
+.loadingStage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  animation: fadeIn 0.3s ease;
+}
+
+.loadingCard {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.loadingCard h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a2332;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.loadingCard > p {
+  font-size: 0.9rem;
+  color: #5a6c7d;
+  margin-bottom: 2rem;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #d1d9e0;
+  border-top: 4px solid #0088cc;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background: #d1d9e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #0088cc, #00b894);
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.progressText {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0088cc;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 2rem;
+}
+
+.statusList {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.statusItem {
+  padding: 0.6rem 0;
+  font-size: 0.85rem;
+  color: #5a6c7d;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Space Mono', monospace;
+}
+
+.statusItem.complete {
+  color: #00b894;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESULTS STAGE
+   ═══════════════════════════════════════════════════════════════ */
+
+.resultsStage {
+  animation: fadeIn 0.3s ease;
+}
+
+.resultsSection {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a2332;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #0088cc;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   METRICS GRID
+   ═══════════════════════════════════════════════════════════════ */
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.metricCard {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: all 0.2s ease;
+}
+
+.metricCard:hover {
+  border-color: #0088cc;
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.1);
+  transform: translateY(-2px);
+}
+
+.metricIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.metricContent {
+  flex: 1;
+}
+
+.metricLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #5a6c7d;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.metricValue {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0088cc;
+  font-family: 'Space Mono', monospace;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.metricSubtext {
+  font-size: 0.75rem;
+  color: #5a6c7d;
+  font-family: 'Space Mono', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PLOTS GRID
+   ═══════════════════════════════════════════════════════════════ */
+
+.plotsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.plotCard,
+.plotCardWide {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.plotCard:hover,
+.plotCardWide:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.plotCardWide {
+  grid-column: 1 / -1;
+}
+
+.plotImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #d1d9e0;
+}
+
+.plotCaption {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #5a6c7d;
+  text-align: center;
+  font-style: italic;
+}
+
+.plotStats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d1d9e0;
+  font-size: 0.8rem;
+  font-family: 'Space Mono', monospace;
+  color: #5a6c7d;
+}
+
+.plotStats span {
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   STATS GRID
+   ═══════════════════════════════════════════════════════════════ */
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.statCard {
+  background: #fafbfc;
+  border: 1px solid #d1d9e0;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.statCard:hover {
+  background: #ffffff;
+  border-color: #0088cc;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #5a6c7d;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0088cc;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 0.5rem;
+}
+
+.statRange {
+  font-size: 0.75rem;
+  color: #5a6c7d;
+  font-family: 'Space Mono', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   QUALITY CARD
+   ═══════════════════════════════════════════════════════════════ */
+
+.qualityCard {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  padding: 1.5rem;
+}
+
+.qualityItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #d1d9e0;
+}
+
+.qualityItem:last-child {
+  border-bottom: none;
+}
+
+.qualityLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5a6c7d;
+}
+
+.qualityValue {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a2332;
+  font-family: 'Space Mono', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   EXPORT BUTTONS
+   ═══════════════════════════════════════════════════════════════ */
+
+.exportButtons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.exportButton {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  color: #1a2332;
+  padding: 0.9rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.exportButton:hover {
+  background: #0088cc;
+  color: #ffffff;
+  border-color: #0088cc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.2);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .configGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .plotsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .exportButtons {
+    grid-template-columns: 1fr;
+  }
+
+  .backButton {
+    position: static;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

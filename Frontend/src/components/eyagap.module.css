@@ -1,0 +1,648 @@
+/* ═══════════════════════════════════════════════════════════════
+   BASE
+   ═══════════════════════════════════════════════════════════════ */
+
+.page {
+  background: #f4f6f8;
+  min-height: 100vh;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #1a2332;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════════════════════════ */
+
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #d1d9e0;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.headerIcon {
+  font-size: 1.75rem;
+}
+
+.headerTitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 800;
+  color: #1a2332;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.headerTitle span {
+  color: #0088cc;
+}
+
+.headerSub {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: #5a6c7d;
+  text-transform: uppercase;
+  margin: 3px 0 0;
+}
+
+.healthBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: transparent;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BODY / CONTAINER
+   ═══════════════════════════════════════════════════════════════ */
+
+.body {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 64px);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INPUT GRID
+   ═══════════════════════════════════════════════════════════════ */
+
+.inputGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PANEL
+   ═══════════════════════════════════════════════════════════════ */
+
+.panel {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.panel:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: #a8b8c8;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #d1d9e0;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1a2332;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.panelDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FIELD ROW
+   ═══════════════════════════════════════════════════════════════ */
+
+.fieldRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #d1d9e0;
+}
+
+.fieldRow:last-child {
+  border-bottom: none;
+}
+
+.fieldLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a2332;
+}
+
+.fieldInput {
+  width: 110px;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #d1d9e0;
+  background: #fafbfc;
+  color: #1a2332;
+  font-size: 0.85rem;
+  font-family: 'Space Mono', monospace;
+  text-align: right;
+  outline: none;
+  transition: all 0.2s ease;
+  -moz-appearance: textfield;
+}
+
+.fieldInput::-webkit-outer-spin-button,
+.fieldInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.fieldInput:focus {
+  border-color: #0088cc;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RUN BUTTON ROW
+   ═══════════════════════════════════════════════════════════════ */
+
+.runRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid #d1d9e0;
+  margin-bottom: 2.5rem;
+}
+
+.runBtn {
+  background: #0088cc;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+}
+
+.runBtn:hover:not(:disabled) {
+  background: #00b894;
+  box-shadow: 0 6px 20px rgba(0, 184, 148, 0.3);
+  transform: translateY(-2px);
+}
+
+.runBtn:active {
+  transform: translateY(0);
+}
+
+.runBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
+}
+
+.errorMsg {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e53e3e;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESULTS WRAPPER
+   ═══════════════════════════════════════════════════════════════ */
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   KPI CARDS
+   ═══════════════════════════════════════════════════════════════ */
+
+.kpiRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.kpiCard {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.2s ease;
+}
+
+.kpiCard:hover {
+  border-color: #0088cc;
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.1);
+  transform: translateY(-2px);
+}
+
+.kpiValue {
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: 'Space Mono', monospace;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.kpiLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #5a6c7d;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION CARDS
+   ═══════════════════════════════════════════════════════════════ */
+
+.section {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.section:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a2332;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #0088cc;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.sectionSub {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: #5a6c7d;
+  margin: -0.75rem 0 1.5rem;
+}
+
+.liveTag {
+  background: rgba(0, 184, 148, 0.1);
+  color: #00b894;
+  border: 1px solid rgba(0, 184, 148, 0.3);
+  padding: 2px 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   WATERFALL CHART
+   ═══════════════════════════════════════════════════════════════ */
+
+.chartWrap {
+  background: #fafbfc;
+  border: 1px solid #d1d9e0;
+  padding: 8px 0;
+  margin-bottom: 1rem;
+}
+
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid #d1d9e0;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: #5a6c7d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.legendItem span {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOOLTIP
+   ═══════════════════════════════════════════════════════════════ */
+
+.tooltip {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  padding: 0.625rem 0.875rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tooltipLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: #5a6c7d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.tooltipVal {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0088cc;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SENSITIVITY SLIDERS
+   ═══════════════════════════════════════════════════════════════ */
+
+.sliderGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.sliderRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sliderLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a2332;
+}
+
+.sliderVal {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0088cc;
+}
+
+.slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #d1d9e0;
+  outline: none;
+  margin-top: 0.5rem;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0088cc;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #00b894;
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0088cc;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #00b894;
+  transform: scale(1.1);
+}
+
+.sliderBounds {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: #5a6c7d;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LOSS BREAKDOWN TABLE
+   ═══════════════════════════════════════════════════════════════ */
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #5a6c7d;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border-bottom: 1px solid #d1d9e0;
+}
+
+.tr {
+  border-bottom: 1px solid #d1d9e0;
+  transition: background 0.15s ease;
+}
+
+.tr:hover {
+  background: #fafbfc;
+}
+
+.tr:last-child {
+  border-bottom: none;
+}
+
+.td {
+  padding: 0.85rem 1rem;
+  color: #5a6c7d;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+}
+
+.tdBold {
+  padding: 0.85rem 1rem;
+  color: #1a2332;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   EXPORT BUTTON
+   ═══════════════════════════════════════════════════════════════ */
+
+.exportBtn {
+  background: #ffffff;
+  border: 1px solid #d1d9e0;
+  color: #1a2332;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.exportBtn:hover {
+  background: #0088cc;
+  color: #ffffff;
+  border-color: #0088cc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.2);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FINDINGS PANEL
+   ═══════════════════════════════════════════════════════════════ */
+
+.findings {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #fafbfc;
+  border: 1px solid #d1d9e0;
+  border-left: 3px solid #0088cc;
+  padding: 1.25rem 1.5rem;
+}
+
+.findingsIcon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.findingsText {
+  font-size: 0.85rem;
+  color: #5a6c7d;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .body {
+    padding: 1rem;
+  }
+
+  .inputGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpiRow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sliderGrid {
+    grid-template-columns: 1fr;
+  }
+}
