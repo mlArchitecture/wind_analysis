@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import styles from "./monteCarlo.module.css";
+import styles from "./montecarlo.module.css";
 
 export default function MonteCarlo() {
   // State management
