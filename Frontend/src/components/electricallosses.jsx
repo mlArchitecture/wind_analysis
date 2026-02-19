@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import styles from "./ElectricalLosses.module.css";
+import styles from "./electricallosses.module.css";
 
 export default function ElectricalLosses() {
   // State management
